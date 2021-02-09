@@ -1,3 +1,6 @@
+[![Made With][made-with-shield]][made-with-url]
+[![BSD Zero Clause License][license-shield]][license-url]
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
@@ -97,3 +100,8 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-hello-world)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+[license-shield]: https://img.shields.io/github/license/th3c0d3br34ker/learn-gatsby.svg?style=for-the-badge
+[license-url]: https://github.com/th3c0d3br34ker/learn-gatsby/blob/master/LICENSE.txt
+[made-with-shield]: https://img.shields.io/github/languages/top/th3c0d3br34ker/learn-gatsby?style=for-the-badge
+[made-with-url]: https://shields.io/github/languages/top/th3c0d3br34ker/learn-gatsby.svg?style-for-the-badge
