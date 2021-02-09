@@ -5,17 +5,16 @@ import Layout from "../components/layout"
 import BlogStyles from "../styles/blog.module.scss"
 
 const BlogPage = () => {
-  const data = useStaticQuery(graphql`
+  const { allMediumPost } = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMediumPost(sort: { fields: [createdAt], order: DESC }) {
         edges {
           node {
-            frontmatter {
-              title
-              date
-            }
-            fields {
-              slug
+            title
+            createdAt(formatString: "MMMM Do, YYYY")
+            uniqueSlug
+            author {
+              username
             }
           }
         }
@@ -23,19 +22,20 @@ const BlogPage = () => {
     }
   `)
 
-  const { allMarkdownRemark } = data
-
   return (
     <Layout>
-      <h1>Blog Page</h1>
+      <h1>My Blogs</h1>
       <ol className={BlogStyles.posts}>
-        {allMarkdownRemark.edges.map(edge => {
+        {allMediumPost.edges.map(post => {
           return (
             <li className={BlogStyles.post}>
-              <Link to={`/blog/${edge.node.fields.slug}`}>
-                <h2>{edge.node.frontmatter.title}</h2>
-                <h4>{edge.node.frontmatter.date}</h4>
-              </Link>
+              <a
+                href={`https://medium.com/@${post.node.author.username}/${post.node.uniqueSlug}`}
+                target="_blank"
+              >
+                <h2>{post.node.title}</h2>
+                <h4>{post.node.createdAt}</h4>
+              </a>
             </li>
           )
         })}
