@@ -38,4 +38,5 @@ module.exports = {
     description: "A personal site made with Gatsby.",
     author: "Jainam Desai",
   },
+  pathPrefix: `/learn-gatsby`,
 }
